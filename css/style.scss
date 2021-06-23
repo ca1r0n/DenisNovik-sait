@@ -1,0 +1,360 @@
+$grey:#828282 ;
+$bg_clr_2:#F6F6F6;
+$transition: 0.2s;
+
+body,p,ul,i,a,div{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.outside{
+    margin: 0 auto;
+    max-width: 943px;
+    width: 100%;
+}
+.top_text{
+    font-family:     'Gilroy';
+    font-size: 34px;
+    font-weight: bold;
+    color: black;
+}
+section{
+    padding: 0 20px;
+}
+// BURGER
+.burger{
+    display: none;
+    align-items: center; 
+    position: fixed;
+    top: 68px;
+    right:  40px;
+    .burger_btn{
+        height: 10px;
+        width: 10px;
+        z-index: 9999;
+    }
+    .burger_btn.active{
+        span{       
+            transform: rotate(45deg);
+            background-color: $grey;
+        }
+        span::after{
+            transform: rotate(90deg);
+            top: 0;
+            background-color: $grey;
+        }
+        span::before{
+            transform: rotate(0);   
+            top: 0;
+            background-color: $grey;            
+        }
+    }
+    span,
+    span::after,
+    span::before{
+        z-index: 10;
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        transition: $transition;
+    }
+    span::after{
+        content: '';
+        top: 8px;
+    }
+    span::before{
+        content: '';
+        top:-8px;
+    }
+    .menu{
+        position: fixed;
+        overflow: auto;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: .3s ease;
+        &--active{
+            display: block;
+            left:0;
+        }   
+        ul{
+            list-style-type: none;
+            padding-top: 66px;
+            padding-left: 26px;
+            li{
+                margin-bottom: 70px;
+            }
+            a{
+                font-family:'Gilroy';
+                font-size: 34px;
+                font-weight: bold;
+                color: $grey;
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .burger{
+        display: flex;
+    }
+    body.lock{
+          overflow: hidden;
+      }
+    }
+// HEADER
+.intro{
+    display: block;
+    height: 90px;
+    .header{
+        margin: 0 auto;
+        max-width: 943px;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid grey;
+        background-color: white;
+    }
+}
+@media (max-width: 600px){
+    .intro{
+        display: none;
+    }
+}
+
+.header_nav{
+    margin: 0 20px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a{
+        font-family: 'Gilroy';
+        font-size: 18px;
+        font-weight: bold;
+        color: grey;
+        transition: $transition;
+    }
+    a:hover{
+        color: black;
+    }
+}
+// HOME
+.home{
+
+    .top_block{
+        margin: 0 5px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .name{
+        font-family: 'Gilroy';
+        font-size: 48px;
+        font-weight: bold;
+        line-height: 58px;
+        padding-top: 40px;
+    }
+    .content{
+        font-family: 'Gilroy';
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        padding-top: 100px;
+    }
+    .lang_panel{
+        position: relative;
+        height: 156px;
+        width: 50px;
+        span{
+            transition: $transition;
+        }
+        span:hover{
+            color: #000;
+        }
+    }
+    .lang_pan{
+        top: 80px;
+        left:  -10px;
+        width: 100px;
+        font-family: 'Gilroy';
+        font-size: 16px;
+        font-weight: bold;
+        color: grey;
+        position: absolute;
+        transform: rotate(-90deg);
+    }
+    .img{
+        background:url(../images/fone_home.png);
+        background-size: cover;
+        width: 100%;
+        height: 387px;
+        margin-bottom: 104px;
+    }
+    @media (max-width: 600px){
+        .lang_panel{
+            display: none;
+        }
+        .top_block{
+            display: block;
+            .content{
+                padding-top: 20px;
+            }
+        }
+    }
+}
+// ABOUT ME
+.about_me{
+    background: $bg_clr_2;
+    p{
+        margin: 0 5px;
+    }
+    .outside{
+        max-height: 500px;
+    }
+    .content{
+        margin: 0 auto  ;
+        padding: 110px 0;
+        text-align: center  ;
+        max-width: 486px;
+        max-height: 280px;
+    }
+    .top_text{
+        margin-bottom: 18px;
+    }
+    .bot_text{
+        font-family: 'Gilroy';
+        font-size: 18px;
+        font-weight: 500;
+        color: black;
+        &--midle{
+            margin: 40px 0;
+        }
+    }
+}
+// SKILLS
+.skill{
+    .main_text{
+        text-align: center;
+        padding-top: 90px;
+        padding-bottom: 30px;
+        .top{
+            font-family: 'Gilroy';
+            font-size: 34px;
+            padding-bottom: 70px ;
+            font-weight: bold;
+        }
+        .bot{
+            font-family: 'Gilroy';
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+    .showcase{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-bottom: 90px;
+        .showcase_items{
+            margin: 40px 5px;
+            height: 207px;
+            width: 166px;
+            text-align: center;
+            .name_prog{
+                height: 30px;
+                padding-top: 17px;
+                padding-bottom: 40px;
+                font-family: 'Gilroy';
+                color: $grey;
+                font-size: 14px;
+                line-height: 17px;
+                font-weight: bold;
+            }
+        }
+        .stars{
+            .star{
+                margin-left: 9px;
+            }
+        }
+    }
+    @media (max-width: 660px){
+        .showcase{
+            justify-content: center;
+        }
+    }
+
+}
+// PORTFOLIO
+.portfolio{
+    background-color: $bg_clr_2;
+    text-align: center;
+    .outside{
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    .top_text{
+        padding-bottom: 50px;
+    }
+    .text_under_img{
+        padding-bottom: 100px;
+        padding-top: 50px;
+        font-family: 'Gilroy';
+        font-size: 18px;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+    img{
+        object-fit: cover;
+        width: 100%;
+    }
+}
+// CONTACT
+
+.contacts{
+    text-align: center;
+    .outside{
+        padding : 120px 0;
+    }
+    .midle_text{
+        padding-bottom: 40px;
+        padding-top: 25px;
+        font-family: 'Gilroy';
+        font-size: 18px;
+        font-weight: 500;
+        color: black;
+    } 
+    .span{
+        background-color: black;
+        color: white;
+        padding: 10px 30px;
+        border-radius: 50px;
+        font-family: 'Gilroy';
+        font-size: 18px;
+        font-weight: bold;
+
+    }
+    .iconcs{
+        padding-top: 85px;
+        padding-bottom: 45px;
+        display: flex;
+        justify-content: center;
+        .mrg_1{
+            margin-left: 60px;
+        }
+        .mrg_2{
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+        
+    }
+    .bot_text{
+        font-family: 'Gilroy';
+        font-size: 14px;
+        font-weight: 500;
+        color: $grey;
+    }
+}

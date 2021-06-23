@@ -1,0 +1,281 @@
+body, p, ul, i, a, div {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+.outside {
+  margin: 0 auto;
+  max-width: 943px;
+  width: 100%; }
+
+.top_text {
+  font-family: 'Gilroy';
+  font-size: 34px;
+  font-weight: bold;
+  color: black; }
+
+section {
+  padding: 0 20px; }
+
+.burger {
+  display: none;
+  align-items: center;
+  position: fixed;
+  top: 68px;
+  right: 40px; }
+  .burger .burger_btn {
+    height: 10px;
+    width: 10px;
+    z-index: 9999; }
+  .burger .burger_btn.active span {
+    transform: rotate(45deg);
+    background-color: #828282; }
+  .burger .burger_btn.active span::after {
+    transform: rotate(90deg);
+    top: 0;
+    background-color: #828282; }
+  .burger .burger_btn.active span::before {
+    transform: rotate(0);
+    top: 0;
+    background-color: #828282; }
+  .burger span,
+  .burger span::after,
+  .burger span::before {
+    z-index: 10;
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    transition: 0.2s; }
+  .burger span::after {
+    content: '';
+    top: 8px; }
+  .burger span::before {
+    content: '';
+    top: -8px; }
+  .burger .menu {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: .3s ease; }
+    .burger .menu--active {
+      display: block;
+      left: 0; }
+    .burger .menu ul {
+      list-style-type: none;
+      padding-top: 66px;
+      padding-left: 26px; }
+      .burger .menu ul li {
+        margin-bottom: 70px; }
+      .burger .menu ul a {
+        font-family: 'Gilroy';
+        font-size: 34px;
+        font-weight: bold;
+        color: #828282; }
+
+@media (max-width: 600px) {
+  .burger {
+    display: flex; }
+
+  body.lock {
+    overflow: hidden; } }
+.intro {
+  display: block;
+  height: 90px; }
+  .intro .header {
+    margin: 0 auto;
+    max-width: 943px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid grey;
+    background-color: white; }
+
+@media (max-width: 600px) {
+  .intro {
+    display: none; } }
+.header_nav {
+  margin: 0 20px;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .header_nav a {
+    font-family: 'Gilroy';
+    font-size: 18px;
+    font-weight: bold;
+    color: grey;
+    transition: 0.2s; }
+  .header_nav a:hover {
+    color: black; }
+
+.home .top_block {
+  margin: 0 5px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between; }
+.home .name {
+  font-family: 'Gilroy';
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 58px;
+  padding-top: 40px; }
+.home .content {
+  font-family: 'Gilroy';
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  padding-top: 100px; }
+.home .lang_panel {
+  position: relative;
+  height: 156px;
+  width: 50px; }
+  .home .lang_panel span {
+    transition: 0.2s; }
+  .home .lang_panel span:hover {
+    color: #000; }
+.home .lang_pan {
+  top: 80px;
+  left: -10px;
+  width: 100px;
+  font-family: 'Gilroy';
+  font-size: 16px;
+  font-weight: bold;
+  color: grey;
+  position: absolute;
+  transform: rotate(-90deg); }
+.home .img {
+  background: url(../images/fone_home.png);
+  background-size: cover;
+  width: 100%;
+  height: 387px;
+  margin-bottom: 104px; }
+@media (max-width: 600px) {
+  .home .lang_panel {
+    display: none; }
+  .home .top_block {
+    display: block; }
+    .home .top_block .content {
+      padding-top: 20px; } }
+
+.about_me {
+  background: #F6F6F6; }
+  .about_me p {
+    margin: 0 5px; }
+  .about_me .outside {
+    max-height: 500px; }
+  .about_me .content {
+    margin: 0 auto;
+    padding: 110px 0;
+    text-align: center;
+    max-width: 486px;
+    max-height: 280px; }
+  .about_me .top_text {
+    margin-bottom: 18px; }
+  .about_me .bot_text {
+    font-family: 'Gilroy';
+    font-size: 18px;
+    font-weight: 500;
+    color: black; }
+    .about_me .bot_text--midle {
+      margin: 40px 0; }
+
+.skill .main_text {
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 30px; }
+  .skill .main_text .top {
+    font-family: 'Gilroy';
+    font-size: 34px;
+    padding-bottom: 70px;
+    font-weight: bold; }
+  .skill .main_text .bot {
+    font-family: 'Gilroy';
+    font-size: 18px;
+    font-weight: 500; }
+.skill .showcase {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 90px; }
+  .skill .showcase .showcase_items {
+    margin: 40px 5px;
+    height: 207px;
+    width: 166px;
+    text-align: center; }
+    .skill .showcase .showcase_items .name_prog {
+      height: 30px;
+      padding-top: 17px;
+      padding-bottom: 40px;
+      font-family: 'Gilroy';
+      color: #828282;
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: bold; }
+  .skill .showcase .stars .star {
+    margin-left: 9px; }
+@media (max-width: 660px) {
+  .skill .showcase {
+    justify-content: center; } }
+
+.portfolio {
+  background-color: #F6F6F6;
+  text-align: center; }
+  .portfolio .outside {
+    padding-top: 100px;
+    padding-bottom: 50px; }
+  .portfolio .top_text {
+    padding-bottom: 50px; }
+  .portfolio .text_under_img {
+    padding-bottom: 100px;
+    padding-top: 50px;
+    font-family: 'Gilroy';
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: underline; }
+  .portfolio img {
+    object-fit: cover;
+    width: 100%; }
+
+.contacts {
+  text-align: center; }
+  .contacts .outside {
+    padding: 120px 0; }
+  .contacts .midle_text {
+    padding-bottom: 40px;
+    padding-top: 25px;
+    font-family: 'Gilroy';
+    font-size: 18px;
+    font-weight: 500;
+    color: black; }
+  .contacts .span {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-family: 'Gilroy';
+    font-size: 18px;
+    font-weight: bold; }
+  .contacts .iconcs {
+    padding-top: 85px;
+    padding-bottom: 45px;
+    display: flex;
+    justify-content: center; }
+    .contacts .iconcs .mrg_1 {
+      margin-left: 60px; }
+    .contacts .iconcs .mrg_2 {
+      margin-left: 60px;
+      margin-right: 60px; }
+  .contacts .bot_text {
+    font-family: 'Gilroy';
+    font-size: 14px;
+    font-weight: 500;
+    color: #828282; }
+
+/*# sourceMappingURL=style.css.map */
